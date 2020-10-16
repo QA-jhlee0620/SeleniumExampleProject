@@ -1,0 +1,12 @@
+from selenium import webdriver #브라우저 조작을 위한 웹드라이버 import
+
+driver = webdriver.Chrome()
+
+driver.get("https://www.google.com") #google 열기
+
+search_input = driver.find_element_by_xpath('//input[@title="검색"]') #페이지 내 검색창에 검색어 입력
+search_input.send_keys("주연아 안녕")
+
+from selenium.webdriver.common.keys import Keys #hotkey 입력 가능한 keys library import
+
+search_input.send_keys(Keys.ENTER) #이미 찾아진 검색창 element에 enter 입력
